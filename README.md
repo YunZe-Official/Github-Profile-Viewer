@@ -24,6 +24,7 @@
 - **图标**: Font Awesome
 
 ## 🚀 快速开始
+>### 使用此项目请遵守我们的[行为准则](CODE_OF_CONDUCT.md)
 
 ### 在线体验
 [Demo](https://demo-github-profile-viewer.netlify.app)（给个Star吧🥺）
@@ -54,8 +55,6 @@
 >> 参考Cloudflare手动部署
 >#### 一键部署
 >[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YunZe-Official/Github-Profile-Viewer)
-
-###请遵守我们的 [行为准则](CODE_OF_CONDUCT.md)。
 
 ## 🤗赞助
 ### 本项目Demo由 [Netlify](https://netlify.com) 提供支持
