@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="现代化GitHub用户信息查询工具，支持图表展示、暗色主题、响应式设计">
+    <meta name="keywords" content="GitHub, Profile, 用户信息, 数据可视化, 开源工具">
+    <meta name="author" content="Yunz">
+    
+    <title>GitHub Profile Viewer - GitHub用户信息查询工具</title>
+    
+    <!-- 字体和图标 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- 主题切换按钮 -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fab fa-github"></i>
+                    <h1>GitHub Profile Viewer</h1>
+                </div>
+                <p class="subtitle">现代化GitHub用户信息查询工具</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 搜索区域 -->
+        <section class="search-section">
+            <form id="searchForm" class="search-form">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            class="search-input"
+                            placeholder="输入GitHub用户名" 
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <button type="button" id="clearSearch" class="clear-button hidden">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                        <span>搜索</span>
+                    </button>
+                </div>
+                
+                <!-- 搜索建议 -->
+                <div id="suggestions" class="suggestions hidden"></div>
+                
+                <!-- 搜索历史 -->
+                <div id="searchHistory" class="search-history hidden">
+                    <div class="history-header">
+                        <h3><i class="fas fa-history"></i> 搜索历史</h3>
+                        <button type="button" id="clearHistory" class="clear-history">
+                            <i class="fas fa-trash"></i> 清空
+                        </button>
+                    </div>
+                    <div id="historyList" class="history-list"></div>
+                </div>
+            </form>
+        </section>
+
+        <!-- 加载状态 -->
+        <section id="loading" class="loading-section hidden">
+            <div class="loading-content">
+                <div class="spinner">
+                    <div class="spinner-inner"></div>
+                </div>
+                <p>正在获取用户信息...</p>
+                <div class="loading-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 错误提示 -->
+        <section id="error" class="error-section hidden">
+            <div class="error-content">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 id="errorTitle">出错了</h3>
+                <p id="errorMessage"></p>
+                <button id="retryButton" class="retry-button">
+                    <i class="fas fa-redo"></i> 重试
+                </button>
+            </div>
+        </section>
+
+        <!-- 用户信息展示区域 -->
+        <section id="profile" class="profile-section hidden">
+            <!-- 用户基本信息 -->
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <img id="avatar" src="" alt="用户头像" class="avatar">
+                        <div class="avatar-badge">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="profile-names">
+                            <h2 id="name" class="user-name"></h2>
+                            <p id="login" class="user-login"></p>
+                        </div>
+                        
+                        <p id="bio" class="user-bio"></p>
+                        
+                        <div class="profile-actions">
+                            <a id="github-link" href="" target="_blank" class="github-button">
+                                <i class="fab fa-github"></i>
+                                访问GitHub
+                            </a>
+                            <button id="shareButton" class="action-button">
+                                <i class="fas fa-share-alt"></i>
+                                分享
+                            </button>
+                            <button id="exportButton" class="action-button">
+                                <i class="fas fa-download"></i>
+                                导出
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 用户统计 -->
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon followers">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="followers">0</span>
+                            <span class="stat-label">关注者</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon following">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="following">0</span>
+                            <span class="stat-label">关注中</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon repos">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="public_repos">0</span>
+                            <span class="stat-label">公开仓库</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon gists">
+                            <i class="fas fa-file-code"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-number" id="public_gists">0</span>
+                            <span class="stat-label">公开Gist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 详细信息 -->
+                <div class="profile-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-building detail-icon"></i>
+                            <div class="detail-content">
+                                <span class="detail-label">公司</span>
+                                <span id="company" class="detail-value">未设置</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt detail-icon"></i>
+                            <div class="detail-content">
+                                <span class="detail-label">位置</span>
+                                <span id="location" class="detail-value">未设置</span>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <i class="fas fa-link detail-icon"></i>
+                            <div class="detail-content">
+                                <span class="detail-label">博客</span>
+                                <a id="blog" href="#" target="_blank" class="detail-value link">未设置</a>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt detail-icon"></i>
+                            <div class="detail-content">
+                                <span class="detail-label">加入时间</span>
+                                <span id="created_at" class="detail-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 图表区域 -->
+            <div class="charts-section">
+                <h3 class="section-title">
+                    <i class="fas fa-chart-bar"></i>
+                    数据分析
+                </h3>
+                
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <canvas id="languageChart"></canvas>
+                        <div class="chart-placeholder hidden">
+                            <i class="fas fa-code"></i>
+                            <p>暂无仓库语言数据</p>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                        <div class="chart-placeholder hidden">
+                            <i class="fas fa-chart-line"></i>
+                            <p>暂无活动数据</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近仓库 -->
+            <div class="repositories-section">
+                <h3 class="section-title">
+                    <i class="fas fa-book"></i>
+                    最近更新的仓库
+                </h3>
+                
+                <div id="repositories" class="repositories-grid">
+                    <div class="loading-placeholder">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>正在加载仓库信息...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                  <p>开源项目 | MIT许可证</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/YunZe-Official/Github-Profile-Viewer" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="#" id="scrollTop" class="scroll-top">
+                        <i class="fas fa-arrow-up"></i> 返回顶部
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast通知 -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
