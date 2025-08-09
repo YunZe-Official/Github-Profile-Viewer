@@ -55,7 +55,7 @@
 >#### 一键部署
 >[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YunZe-Official/Github-Profile-Viewer)
 
-## 赞助
+## 🤗赞助
 ### 本项目Demo由 [Netlify](https://netlify.com) 提供支持
 
 ## Star History
