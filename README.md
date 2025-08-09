@@ -26,7 +26,7 @@
 ## 🚀 快速开始
 
 ### 在线体验
-[Demo（给个Star吧😋）](https://demo-github-profile-viewer.netlify.app)
+[Demo（给个Star吧🥺）](https://demo-github-profile-viewer.netlify.app)
 
 ### 部署到[Cloudflare](https://cloudflare.com)
 >#### 手动部署
