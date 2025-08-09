@@ -29,13 +29,13 @@
 [Demo（给个Star吧😋）](https://demo-github-profile-viewer.netlify.app)
 
 ### 部署到Cloudflare
-#### 手动部署
-> 1. 首先fork此项目
-> 2. 打开Cloudflare并进入Workers 和 Pages
-> 3. 创建一个Pages（导入现有的Git存储库）
-> 4. 选择你fork的仓库
-> 5. 无需更改直接部署
-> 6. 绑定自定义域名
+>#### 手动部署
+>> 1. 首先fork此项目
+>> 2. 打开Cloudflare并进入Workers 和 Pages
+>> 3. 创建一个Pages（导入现有的Git存储库）
+>> 4. 选择你fork的仓库
+>> 5. 无需更改直接部署
+>> 6. 绑定自定义域名
 
 ### 部署到Vercel
 #### 手动部署
