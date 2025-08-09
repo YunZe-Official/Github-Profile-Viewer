@@ -55,6 +55,8 @@
 >#### 一键部署
 >[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YunZe-Official/Github-Profile-Viewer)
 
+###请遵守我们的 [行为准则](CODE_OF_CONDUCT.md)。
+
 ## 🤗赞助
 ### 本项目Demo由 [Netlify](https://netlify.com) 提供支持
 
