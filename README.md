@@ -1,7 +1,7 @@
 # 🌟 GitHub Profile Viewer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/YunZe-Official/Github-Profile-Viewer)](https://github.com/YunZe-Official/Github-Profile-Viewer/stargazers)
+
 
 一个美观的GitHub用户信息查询工具，支持图表展示、暗色主题、响应式设计。
 
