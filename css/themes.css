@@ -1,0 +1,245 @@
+/* 主题系统 */
+
+/* 亮色主题（默认） */
+:root {
+    /* 主色调 */
+    --primary-50: #f0fff4;
+    --primary-100: #dcffe4;
+    --primary-200: #baffcf;
+    --primary-300: #85f5b4;
+    --primary-400: #4ded9c;
+    --primary-500: #2ea44f;
+    --primary-600: #2c974b;
+    --primary-700: #257f41;
+    --primary-800: #206737;
+    --primary-900: #19542b;
+    
+    /* 次要色调 */
+    --secondary-50: #f0f6fc;
+    --secondary-100: #d9e5f2;
+    --secondary-200: #b9d0e8;
+    --secondary-300: #8cb2db;
+    --secondary-400: #5c91cd;
+    --secondary-500: #1f6feb;
+    --secondary-600: #195bc9;
+    --secondary-700: #1549a6;
+    --secondary-800: #133a84;
+    --secondary-900: #12306b;
+    
+    /* 灰色调 */
+    --gray-50: #f6f8fa;
+    --gray-100: #eaeef2;
+    --gray-200: #d0d7de;
+    --gray-300: #afb8c1;
+    --gray-400: #8c959f;
+    --gray-500: #6e7781;
+    --gray-600: #57606a;
+    --gray-700: #424a53;
+    --gray-800: #32383f;
+    --gray-900: #24292f;
+    
+    /* 状态色 */
+    --success-500: #2da44e;
+    --success-600: #2b8f46;
+    --warning-500: #d4a72c;
+    --warning-600: #bf901f;
+    --danger-500: #cf222e;
+    --danger-600: #b41c28;
+    
+    /* 文本颜色 */
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-600);
+    --text-tertiary: var(--gray-500);
+    --text-inverted: white;
+    
+    /* 背景颜色 */
+    --bg-primary: white;
+    --bg-secondary: var(--gray-50);
+    --bg-tertiary: var(--gray-100);
+    --bg-overlay: rgba(27, 31, 36, 0.75);
+    
+    /* 边框颜色 */
+    --border-primary: var(--gray-200);
+    --border-secondary: var(--gray-100);
+    
+    /* 阴影 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* 其他 */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
+    --radius-full: 9999px;
+}
+
+/* 暗色主题 */
+[data-theme="dark"] {
+    /* 灰色调（暗色主题） */
+    --gray-50: #010409;
+    --gray-100: #0d1117;
+    --gray-200: #161b22;
+    --gray-300: #21262d;
+    --gray-400: #30363d;
+    --gray-500: #484f58;
+    --gray-600: #6e7681;
+    --gray-700: #8b949e;
+    --gray-800: #b1bac4;
+    --gray-900: #f0f6fc;
+    
+    /* 主色调（暗色主题调整） */
+    --primary-50: #f0fff4;
+    --primary-100: #dcffe4;
+    --primary-200: #baffcf;
+    --primary-300: #85f5b4;
+    --primary-400: #4ded9c;
+    --primary-500: #2ea44f;
+    --primary-600: #2c974b;
+    --primary-700: #257f41;
+    --primary-800: #206737;
+    --primary-900: #19542b;
+    
+    /* 文本颜色 */
+    --text-primary: var(--gray-900);
+    --text-secondary: var(--gray-700);
+    --text-tertiary: var(--gray-600);
+    --text-inverted: var(--gray-100);
+    
+    /* 背景颜色 */
+    --bg-primary: var(--gray-100);
+    --bg-secondary: var(--gray-200);
+    --bg-tertiary: var(--gray-300);
+    --bg-overlay: rgba(1, 4, 9, 0.8);
+    
+    /* 边框颜色 */
+    --border-primary: var(--gray-400);
+    --border-secondary: var(--gray-300);
+    
+    /* 阴影（暗色主题更柔和） */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* 高对比度主题 */
+[data-theme="high-contrast"] {
+    --text-primary: black;
+    --text-secondary: #333;
+    --text-tertiary: #666;
+    --text-inverted: white;
+    
+    --bg-primary: white;
+    --bg-secondary: #f0f0f0;
+    --bg-tertiary: #e0e0e0;
+    
+    --border-primary: black;
+    --border-secondary: #666;
+    
+    --primary-500: #0000ff;
+    --primary-600: #0000cc;
+}
+
+/* 主题切换动画 */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* 特定元素的暗色主题调整 */
+[data-theme="dark"] .chart-container {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .stat-card {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .repo-card {
+    background: var(--bg-primary);
+}
+
+/* 系统主题跟随 */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        /* 继承暗色主题变量 */
+    }
+}
+
+/* 主题切换按钮动画 */
+.theme-toggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* 加载动画增强 */
+.spinner-inner {
+    transition: all 0.3s ease;
+}
+
+/* 按钮悬停效果 */
+button, .action-button, .github-button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, .action-button:hover, .github-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* 卡片悬停效果 */
+.profile-card, .chart-container, .repo-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-card:hover, .chart-container:hover, .repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Toast动画 */
+.toast {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.toast.show {
+    animation: toastSlideIn 0.3s ease-out;
+}
+
+@keyframes toastSlideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 进度条动画 */
+.progress-fill {
+    transition: width 0.5s ease;
+}
+
+/* 搜索框焦点动画 */
+.search-input:focus {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 164, 79, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 164, 79, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 164, 79, 0);
+    }
+}
