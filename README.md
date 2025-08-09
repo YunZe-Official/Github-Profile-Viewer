@@ -24,7 +24,7 @@
 - **图标**: Font Awesome
 
 ## 🚀 快速开始
->### 使用此项目请遵守我们的[行为准则](CODE_OF_CONDUCT.md)
+#### 使用此项目请遵守我们的[行为准则](CODE_OF_CONDUCT.md)
 
 ### 在线体验
 [Demo](https://demo-github-profile-viewer.netlify.app)（给个Star吧🥺）
