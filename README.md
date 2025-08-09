@@ -38,10 +38,10 @@
 > 6. 绑定自定义域名
 
 ### 部署到Vercel
-#### 手动部署
-> 参考Cloudflare手动部署
-#### 一键部署
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/iamhutao-projects/clone?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)
+>#### 手动部署
+>> 参考Cloudflare手动部署
+>#### 一键部署
+>[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/iamhutao-projects/clone?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)
 
 ### 部署到EdgeOne
 #### 手动部署
