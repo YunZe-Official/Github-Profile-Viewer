@@ -1242,3 +1242,6 @@ body {
     background: rgba(46, 164, 79, 0.3);
     color: var(--text-primary);
 }
+
+.hidden { display: none !important; }
+.footer-links { display: flex; justify-content: center; gap: 1rem; }
