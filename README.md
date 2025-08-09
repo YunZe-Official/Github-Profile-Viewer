@@ -35,18 +35,21 @@
 > 3. 创建一个Pages（导入现有的Git存储库）
 > 4. 选择你fork的仓库
 > 5. 无需更改直接部署
-> 6. 绑定自定义域名  
+> 6. 绑定自定义域名
+
 ### 部署到Vercel
 #### 手动部署
 > 参考Cloudflare手动部署
 #### 一键部署
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/iamhutao-projects/clone?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)  
-### 一键部署到EdgeOne
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/iamhutao-projects/clone?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)
+
+### 部署到EdgeOne
 #### 手动部署
 > 参考Cloudflare手动部署
 #### 一键部署
 [![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)  
-### 一键部署到Netlify
+
+### 部署到Netlify
 #### 手动部署
 > 参考Cloudflare手动部署
 #### 一键部署
