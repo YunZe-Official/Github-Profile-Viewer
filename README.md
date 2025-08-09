@@ -28,7 +28,7 @@
 ### 在线体验
 [Demo（给个Star吧😋）](https://demo-github-profile-viewer.netlify.app)
 
-### 部署到Cloudflare
+### 部署到[Cloudflare](https://cloudflare.com)
 >#### 手动部署
 > 1. 首先fork此项目
 > 2. 打开Cloudflare并进入Workers 和 Pages
@@ -37,19 +37,19 @@
 > 5. 无需更改直接部署
 > 6. 绑定自定义域名
 
-### 部署到Vercel
+### 部署到[Vercel](https://vercel.com)
 >#### 手动部署
 >> 参考Cloudflare手动部署
 >#### 一键部署
 >[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/iamhutao-projects/clone?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)
 
-### 部署到EdgeOne
+### 部署到[EdgeOne](https://edgeone.ai)
 >#### 手动部署
 >> 参考Cloudflare手动部署
 >#### 一键部署
 >[![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/YunZe-Official/Github-Profile-Viewer)  
 
-### 部署到Netlify
+### 部署到[Netlify](https://netlify.com)
 >#### 手动部署
 >> 参考Cloudflare手动部署
 >#### 一键部署
