@@ -788,3 +788,14 @@ document.addEventListener('visibilitychange', function() {
         // window.app.searchUser(window.app.currentUsername);
     }
 });
+
+
+// 返回顶部按钮显示/隐藏
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        scrollTopBtn.classList.remove('hidden');
+    } else {
+        scrollTopBtn.classList.add('hidden');
+    }
+});
